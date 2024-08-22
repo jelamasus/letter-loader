@@ -26,7 +26,7 @@ export class GptClientWrapper {
           function: {
             name: 'is_invitational_letter',
             description:
-              'Determine whether the letter is an invitation to work',
+              'Determining that the letter is a job offer, a full-fledged job offer, and not just a job posting',
             strict: true,
             parameters: {
               type: 'object',
@@ -34,7 +34,7 @@ export class GptClientWrapper {
                 is_invitational_letter: {
                   type: 'boolean',
                   description:
-                    'A flag indicating whether the letter is an invitation to work',
+                    'A flag that determines whether the letter is a job offer, a full-fledged job offer, and not just informing about a vacancy',
                 },
               },
               required: ['is_invitational_letter'],
