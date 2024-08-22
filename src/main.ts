@@ -1,20 +1,18 @@
 import { resolve } from 'path';
 import { saveObjectsToCsv } from './utils/csv.js';
-import { Letter } from './utils/letters.js';
+import { getLetters, Letter } from './utils/letters.js';
 import { logger } from './utils/logger.js';
-import { readFile, writeFile } from 'fs/promises';
+import { writeFile } from 'fs/promises';
 import { GptClientWrapper } from './utils/gpt.js';
 import settings from './utils/settings.js';
 
 async function main() {
-  const letters = JSON.parse(
-    (await readFile(resolve('letters.json'))).toString(),
-  ) as Letter[];
+  const letters = await getLetters('2024-08-12', '2024-08-18');
 
-  // await writeFile(
-  //   resolve('letters.json'),
-  //   JSON.stringify(letters, undefined, 2),
-  // );
+  await writeFile(
+    resolve('letters.json'),
+    JSON.stringify(letters, undefined, 2),
+  );
 
   logger.info({
     msg: 'Letters loaded',
