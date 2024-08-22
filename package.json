@@ -1,0 +1,35 @@
+{
+  "name": "letters-extractor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js | npx pino-pretty",
+    "start:dev": "tsx src/main.ts | npx pino-pretty"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.4",
+    "cheerio": "^1.0.0",
+    "csv": "^6.3.10",
+    "dotenv": "^16.4.5",
+    "https-proxy-agent": "^7.0.5",
+    "joi": "^17.13.3",
+    "knex": "^3.1.0",
+    "openai": "^4.56.0",
+    "pg": "^8.12.0",
+    "pino": "^9.3.2",
+    "pino-pretty": "^11.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "@types/pg": "^8.11.6",
+    "prettier": "^3.3.3",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4"
+  }
+}
